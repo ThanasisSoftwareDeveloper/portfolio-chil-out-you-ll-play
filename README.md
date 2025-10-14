@@ -128,6 +128,7 @@ Steps:
 
 Thanasis Koufos
 Web Developer
+
 📧 thanasis.koufos1@gmail.com
 
 🌐 https://github.com/ThanasisSoftwareDeveloper
