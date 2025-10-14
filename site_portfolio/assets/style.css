@@ -1,0 +1,116 @@
+/* assets/style.css - βασικό στυλ + responsive + sticky footer + burger always top-left */
+
+:root{
+  --green:#4caf50;
+  --green-dark:#43a047;
+  --accent:#ff4081;
+  --bg:#f9fafb;
+  --card:#ffffff;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:#222}
+main{min-height:calc(100vh - 60px);padding-bottom:60px;} /* leave space for footer */
+
+.site-header{
+  background:linear-gradient(135deg,var(--green),#8bc34a);
+  color:white;
+  padding:30px 20px 40px;
+  text-align:center;
+}
+
+.subtitle{opacity:0.95;margin-top:8px;font-size:1.05rem}
+
+/* NAV - burger top-left always visible */
+.menu-toggle{
+  position:fixed;
+  left:12px;
+  top:12px;
+  z-index:9999;
+  background:var(--green);
+  color:white;
+  border:none;
+  font-size:1.5rem;
+  padding:8px 10px;
+  border-radius:6px;
+  cursor:pointer;
+  box-shadow:0 2px 8px rgba(0,0,0,0.15);
+}
+
+.main-nav{
+  position:fixed;
+  left:12px;
+  top:60px;
+  z-index:9998;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  background:rgba(255,255,255,0.95);
+  padding:10px;
+  border-radius:8px;
+  box-shadow:0 4px 20px rgba(0,0,0,0.12);
+}
+
+.main-nav a{
+  text-decoration:none;
+  color:var(--green-dark);
+  font-weight:600;
+  padding:6px 10px;
+  border-radius:6px;
+}
+.main-nav a.donate-btn{background:var(--accent); color:white;}
+
+/* Content area */
+section{
+  max-width:900px;
+  margin:30px auto;
+  padding:20px;
+  background:var(--card);
+  border-radius:8px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.06);
+}
+
+.projects{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.project-card{
+  flex:1 1 45%;
+  background:#f0f8f5;
+  border-left:5px solid var(--green);
+  padding:14px;
+  border-radius:6px;
+}
+
+/* Forms */
+form{display:flex;flex-direction:column;gap:10px}
+input,textarea,button{padding:10px;border-radius:6px;border:1px solid #ccc;font-size:1rem}
+button{background:var(--green);color:white;border:none;cursor:pointer}
+button:hover{background:var(--green-dark)}
+
+/* Donate buttons */
+.donate-options{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.paypal{background:#003087;color:white;padding:12px 20px;border-radius:6px;text-decoration:none}
+.bitcoin{background:#f7931a;color:white;padding:12px 20px;border-radius:6px;text-decoration:none}
+
+/* Footer fixed bottom */
+.site-footer{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  height:60px;
+  background:#222;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+/* Responsive tweaks */
+@media(max-width:768px){
+  .project-card{flex:1 1 100%}
+  .main-nav{left:12px; top:60px}
+}
