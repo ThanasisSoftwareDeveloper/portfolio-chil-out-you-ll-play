@@ -22,7 +22,7 @@ To run the full version on your computer, install:
 
 
 ## 🧩 File & Folder Structure
-΄΄΄ 
+```
 project_root/
 │
 ├── index.php # Homepage
@@ -50,7 +50,7 @@ project_root/
 │ └── database.sql # SQL script for creating tables
 │
 └── README.md # Documentation (this file)
-΄΄΄
+```
 
 ## 🛠️ How to Run Locally (Full PHP + MySQL Version)
 
