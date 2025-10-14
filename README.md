@@ -4,13 +4,6 @@ This is a lightweight, and elegant personal portfolio website built with **HTML,
 It also serves as an educational demo project for running a dynamic website locally and deploying a static version to GitHub Pages.
 
 
-## 🌍 Live Demo
-Static version hosted on **GitHub Pages** (HTML/CSS/JS only):  
-👉 [https://thanasissoftwaredeveloper.github.io/portfolio/](https://thanasissoftwaredeveloper.github.io/portfolio/)
-
-The live PHP/MySQL version must be run locally or on a web server that supports PHP.
-
-
 ## ⚙️ Requirements (for local PHP/MySQL version)
 
 To run the full version on your computer, install:
