@@ -9,7 +9,7 @@ include __DIR__ . '/includes/header.php';
   <p>Send me a message</p>
 
   <!-- Παραμένει FormSubmit ή αν θες PHP mail, το αντικαθιστούμε -->
-  <form action="https://formsubmit.co/your@email.com" method="POST">
+  <form action="https://formsubmit.co/thanasis.koufos1@email.com" method="POST">
     <label>Name</label>
     <input type="text" name="name" required>
 
@@ -24,5 +24,6 @@ include __DIR__ . '/includes/header.php';
 
   <p style="margin-top:20px;color:#666">Page views: <?php echo htmlspecialchars($count); ?></p>
 </section>
+
 
 <?php include __DIR__ . '/includes/footer.php'; ?>
