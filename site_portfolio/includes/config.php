@@ -1,13 +1,14 @@
 <?php
 // includes/config.php
-// Edit these values for MySQL:
-define('DB_DRIVER', 'mysql'); // 'mysql' ή 'sqlite'
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'site_db');
-define('DB_USER', 'site_user');
-define('DB_PASS', 'strongpassword');
+// Database connection settings
 
-// If you prefer SQLite (ελαφρύ, single-file) use:
+define('DB_DRIVER', 'mysql'); // 'mysql' or 'sqlite'
+define('DB_HOST', 'localhost');
+define('DB_NAME', 'portfolio_db'); // match your phpMyAdmin database
+define('DB_USER', 'root');
+define('DB_PASS', ''); // or `` if there is not any MySQL password
+
+// Optional: switch to SQLite for a very lightweight setup
 // define('DB_DRIVER', 'sqlite');
 // define('DB_PATH', __DIR__ . '/../data/site_db.sqlite');
 
@@ -18,12 +19,13 @@ $options = [
 
 try {
   if (DB_DRIVER === 'sqlite') {
-    $pdo = new PDO('sqlite:' . DB_PATH, null, null, $options);
+    $pdo = new PDO ('sqlite:' . DB_PATH, null, null, $options);
   } else {
     $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4";
     $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
   }
 } catch (PDOException $e) {
-  // Σφάλμα σύνδεσης — για production, μην εμφανίζεις το μήνυμα στο κοινό
   die("DB Connection failed: " . $e->getMessage());
+}
+?>
 }
