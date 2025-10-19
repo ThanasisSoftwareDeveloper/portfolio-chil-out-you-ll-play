@@ -5,6 +5,7 @@ $count = increment_counter('index');
 include __DIR__ . '/includes/header.php';
 ?>
 <section>
+  <h1>How put down their phones for a while and read?</h1>
   <h2>The challenge of our time</h2>
   <p>Children grow up surrounded by notifications, videos and games. How can we help them focus on reading and imagination again?</p>
 
@@ -23,7 +24,7 @@ include __DIR__ . '/includes/header.php';
     <div class="project-card"><h4>AI Assistant for Students</h4><p>A chatbot to help students organize their study time.</p></div>
   </div>
 
-  <p style="margin-top:20px;color:#666">Page views: <?php echo htmlspecialchars($count); ?></p>
+  <p style="margin-top:20px;color:#667;">Page views: <?php echo htmlspecialchars($count); ?></p>
 </section>
 
 <?php include __DIR__ . '/includes/footer.php'; ?>
