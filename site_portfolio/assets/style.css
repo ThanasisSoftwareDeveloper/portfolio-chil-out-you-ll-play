@@ -10,28 +10,30 @@ body {
 }
 
 /* === Navbar === */
-header {
-  background-color: #111;
-  color: white;
-  padding: 10px 0;
-}
-
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #111;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0 25px;
-  position: relative;
+  justify-content: space-between;
+  padding: 10px 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
-.logo {
-  font-size: 1.3em;
-  font-weight: bold;
-  color: #fff;
+/* Burger menu top-left */
+.burger-menu {
+  font-size: 1.8em;
+  color: white;
+  cursor: pointer;
+  user-select: none;
 }
 
-/* === Menu === */
-.nav-links {
+/* Right-side menu (always visible on desktop) */
+.nav-buttons {
   list-style: none;
   display: flex;
   gap: 20px;
@@ -39,50 +41,55 @@ header {
   padding: 0;
 }
 
-.nav-links li a {
+.nav-buttons li a {
   color: white;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.2s;
+  transition: color 0.2s ease;
 }
 
-.nav-links li a:hover {
+.nav-buttons li a:hover {
   color: #00ffcc;
 }
 
-/* === Burger Button === */
-.menu-toggle {
+/* Dropdown (hidden by default) */
+.dropdown-menu {
   display: none;
-  font-size: 1.6em;
-  background: none;
-  border: none;
+  position: absolute;
+  top: 45px;
+  left: 15px;
+  background: #111;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  border-radius: 6px;
+  width: 160px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Show on hover */
+.navbar:hover .dropdown-menu {
+  display: block;
+}
+
+/* Dropdown items */
+.dropdown-menu li {
+  padding: 8px 20px;
+}
+
+.dropdown-menu li a {
   color: white;
-  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  transition: background 0.2s;
 }
 
-/* === Responsive (Mobile) === */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #111;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    padding: 15px 0;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
+.dropdown-menu li a:hover {
+  background: #00ffcc;
+  color: #000;
 }
 
-/* === Donate Button === */
+/* Donate Button Style */
 .donate-btn {
   background-color: #00ffcc;
   padding: 5px 10px;
@@ -95,19 +102,27 @@ header {
   background-color: #00e6b8;
 }
 
-/* === Page Section === */
+/* === Page Content === */
 section {
   flex: 1;
-  padding: 40px;
+  padding: 100px 40px 80px; /* αυξάνουμε το πάνω περιθώριο */
   max-width: 900px;
   margin: auto;
   background: white;
   border-radius: 10px;
   box-shadow: 0 0 8px rgba(0,0,0,0.1);
-  margin-top: 20px;
+  margin-top: 10px; /* επιπλέον απόσταση κάτω από το navbar */
 }
 
-/* === Projects === */
+
+
+/* === Headings === */
+
+h2, h3 {
+  color: #00b38f;
+}
+
+/* === Project Cards === */
 .projects {
   display: flex;
   gap: 15px;
@@ -121,6 +136,11 @@ section {
   padding: 15px;
   border-radius: 6px;
   flex: 1 1 45%;
+  transition: transform 0.2s;
+}
+
+.project-card:hover {
+  transform: scale(1.02);
 }
 
 /* === Footer === */
@@ -134,4 +154,95 @@ footer {
   left: 0;
   width: 100%;
   font-size: 0.9em;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+}
+
+
+
+h1 {
+  text-align: center;
+  font-size: 4em;
+  color: #00b38f;
+  margin-bottom: 20px;
+  animation: fadeInDown 0.8s ease;
+  background-color:rgb(217, 226, 214);
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* === Donation Buttons === */
+.donate-options {
+  display: flex;
+  justify-content: center;
+  gap: 3cm; /* ✅ Απόσταση 3 εκ. μεταξύ των κουμπιών */
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.btn-paypal {
+  background-color: #0070ba;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-paypal:hover {
+  background-color: #005c99;
+}
+
+.btn-bitcoin {
+  background-color: #f7931a;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-bitcoin:hover {
+  background-color: #e68000;
+}
+@media (max-width: 700px) {
+  .donate-options {
+    flex-direction: column;
+    gap: 1.5cm;
+  }
+}
+body {
+  overflow-x: hidden;
+}
+
+@media (max-width: 1400px) {
+  .nav-buttons {
+    gap: 12px;
+  }
+
+  .nav-buttons li a {
+    font-size: 0.95em;
+    padding: 6px 8px;
+  }
+
+  .donate-btn {
+    padding: 6px 10px;
+    font-size: 0.95em;
+  }
+}
+.navbar {
+  max-width: 100%;
+  box-sizing: border-box;
 }
