@@ -21,6 +21,7 @@ project_root/
 ├── index.php # Homepage
 ├── contact.php # Contact form (sends emails)
 ├── login.php # Login and signup form
+├── logout.php # Logout form 
 ├── donate.php # Donation page (PayPal / Bitcoin)
 │
 ├── includes/
