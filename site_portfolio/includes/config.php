@@ -6,7 +6,7 @@ define('DB_DRIVER', 'mysql'); // 'mysql' or 'sqlite'
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'portfolio_db'); // match your phpMyAdmin database
 define('DB_USER', 'root');
-define('DB_PASS', ''); // or `` if there is not any MySQL password
+define('DB_PASS', ' CXqGgphqk~ao03@7'); // or `` if there is notany MySQL password
 
 // Optional: switch to SQLite for a very lightweight setup
 // define('DB_DRIVER', 'sqlite');
@@ -19,7 +19,7 @@ $options = [
 
 try {
   if (DB_DRIVER === 'sqlite') {
-    $pdo = new PDO ('sqlite:' . DB_PATH, null, null, $options);
+    $pdo = new PDO('sqlite:' . DB_PATH, null, null, $options);
   } else {
     $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4";
     $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
@@ -28,4 +28,3 @@ try {
   die("DB Connection failed: " . $e->getMessage());
 }
 ?>
-}

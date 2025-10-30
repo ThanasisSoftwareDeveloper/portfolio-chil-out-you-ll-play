@@ -5,7 +5,7 @@ $count = increment_counter('index');
 include __DIR__ . '/includes/header.php';
 ?>
 <section>
-  <h1>How put down their phones for a while and read?</h1>
+  <h1>How can we get children to put down their phones for a while and read?</h1>
   <h2>The challenge of our time</h2>
   <p>Children grow up surrounded by notifications, videos and games. How can we help them focus on reading and imagination again?</p>
 

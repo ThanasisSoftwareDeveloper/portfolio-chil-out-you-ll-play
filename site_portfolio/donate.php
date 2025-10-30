@@ -4,16 +4,17 @@ require_once __DIR__ . '/includes/counter.php';
 $count = increment_counter('donate');
 include __DIR__ . '/includes/header.php';
 ?>
-
 <section>
   <h2>Support this project 💖</h2>
   <p>If you liked this project, you can make a small donation:</p>
 
   <div class="donate-options">
-    <a class="btn-paypal" href="https://www.paypal.com/" target="_blank">Donate with PayPal</a>
+    <a class="paypal" href="https://www.paypal.com/donate" target="_blank">PayPal</a>
 
     <!-- Bitcoin button triggers reveal -->
-    <button id="show-btc" class="btn-bitcoin">Donate with Bitcoin</button>
+    <button id="show-btc" class="bitcoin" style="background:#f7931a;color:white;border:none;padding:12px 20px;border-radius:6px;cursor:pointer;">
+      Bitcoin
+    </button>
   </div>
 
   <!-- Hidden area that shows the address and copy -->
@@ -24,29 +25,5 @@ include __DIR__ . '/includes/header.php';
 
   <p style="margin-top:20px;color:#666">Page views: <?php echo htmlspecialchars($count); ?></p>
 </section>
-
-<script>
-  // Show Bitcoin address
-  document.addEventListener("DOMContentLoaded", function () {
-    const showBtn = document.getElementById("show-btc");
-    const btcBox = document.getElementById("btc-addr");
-    const copyBtn = document.getElementById("copy-btc");
-    const addr = document.getElementById("btc-addr-text");
-
-    if (showBtn && btcBox) {
-      showBtn.addEventListener("click", () => {
-        btcBox.style.display = "block";
-      });
-    }
-
-    if (copyBtn && addr) {
-      copyBtn.addEventListener("click", () => {
-        navigator.clipboard.writeText(addr.textContent);
-        copyBtn.textContent = "Copied!";
-        setTimeout(() => copyBtn.textContent = "Copy address", 2000);
-      });
-    }
-  });
-</script>
 
 <?php include __DIR__ . '/includes/footer.php'; ?>

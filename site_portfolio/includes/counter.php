@@ -33,4 +33,3 @@ function get_counter($page) {
   $res = $stmt->fetchColumn();
   return $res ? (int)$res : 0;
 }
-
