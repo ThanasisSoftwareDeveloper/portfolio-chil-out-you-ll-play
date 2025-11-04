@@ -1,136 +1,245 @@
-/* assets/style.css - βασικό στυλ + responsive + sticky footer + burger always top-left */
-
-:root{
-  --green:#4caf50;
-  --green-dark:#43a047;
-  --accent:#ff4081;
-  --bg:#f9fafb;
-  --card:#ffffff;
+:root {
+  --green: #4caf50;
+  --green-dark: #388e3c;
+  --accent: #ff6f61;
+  --bg: #ffffff;
+  --card: #ffffff;
+  --text: #1b5e20;
+  --hover: #66bb6a;
+  --header-gradient: linear-gradient(135deg, #4caf50, #81c784);
 }
 
-*{box-sizing:border-box}
-html,body{height:100%;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:#222}
-main{min-height:calc(100vh - 60px);padding-bottom:60px;} /* leave space for footer */
-
-/* HEADER (hero) */
-.site-header{
-  background:linear-gradient(135deg,var(--green),#8bc34a);
-  color:white;
-  padding:30px 20px 40px;
-  text-align:center;
-  padding-top:90px; /* extra space so hero δεν κρύβεται από burger/menu */
-}
-.subtitle{opacity:0.95;margin-top:8px;font-size:1.05rem}
-
-/* === NAV === */
-/* Burger button πάντα πάνω αριστερά */
-.menu-toggle{
-  position:fixed;
-  left:12px;
-  top:12px;
-  z-index:9999;
-  background:var(--green);
-  color:white;
-  border:none;
-  font-size:1.5rem;
-  padding:8px 10px;
-  border-radius:6px;
-  cursor:pointer;
-  box-shadow:0 2px 8px rgba(0,0,0,0.15);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Κουτί μενού (κάθετο) */
-.main-nav{
-  position:fixed;
-  left:12px;
-  top:60px;
-  z-index:9998;
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-  background:rgba(255,255,255,0.95);
-  padding:10px;
-  border-radius:8px;
-  box-shadow:0 4px 20px rgba(0,0,0,0.12);
+html, body {
+  min-width: 2cm;
+  width: 100%;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
 }
 
-/* Σύνδεσμοι μενού */
-.main-nav a{
-  text-decoration:none;
-  color:var(--green-dark);
-  font-weight:600;
-  padding:6px 10px;
-  border-radius:6px;
+/* HEADER */
+.site-header {
+  background: var(--header-gradient);
+  color: white;
+  padding: 30px 20px 20px;
+  text-align: center;
+  width: 100%;
+  position: relative;
 }
-.main-nav a:hover{background:#e8f5e9}
-.main-nav a.donate-btn{background:var(--accent); color:white;}
-.main-nav a.donate-btn:hover{filter:brightness(0.95)}
-
-/* Περιεχόμενο */
-section{
-  max-width:900px;
-  margin:30px auto;
-  padding:20px;
-  background:var(--card);
-  border-radius:8px;
-  box-shadow:0 2px 8px rgba(0,0,0,0.06);
+.site-header h1,
+.site-header .subtitle {
+  text-align: center;
+  margin: 0 auto 12px;
+  line-height: 1.5;
+  max-width: 100%;
 }
 
-/* Projects grid */
-.projects{
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
+/* HEADER TOP RIGHT BUTTONS (TABLET+) */
+.header-top-nav {
+  display: none;
 }
-.project-card{
-  flex:1 1 45%;
-  background:#f0f8f5;
-  border-left:5px solid var(--green);
-  padding:14px;
-  border-radius:6px;
-}
-
-/* Forms */
-form{display:flex;flex-direction:column;gap:10px}
-input,textarea,button{padding:10px;border-radius:6px;border:1px solid #ccc;font-size:1rem}
-button{background:var(--green);color:white;border:none;cursor:pointer}
-button:hover{background:var(--green-dark)}
-
-/* Donate buttons row */
-.donate-options{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-.paypal{background:#003087;color:white;padding:12px 20px;border-radius:6px;text-decoration:none}
-.bitcoin{background:#f7931a;color:white;padding:12px 20px;border-radius:6px;text-decoration:none}
-
-/* Footer fixed bottom */
-.site-footer{
-  position:fixed;
-  bottom:0;
-  left:0;
-  right:0;
-  height:60px;
-  background:#222;
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:9999;
+@media (min-width: 768px) {
+  .header-top-nav {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    gap: 12px;
+    z-index: 9998;
+  }
+  .header-top-nav a {
+    text-decoration: none;
+    padding: 8px 14px;
+    background-color: white;
+    color: var(--green-dark);
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background 0.3s, color 0.3s;
+  }
+  .header-top-nav a:hover {
+    background-color: var(--hover);
+    color: white;
+  }
+  .header-top-nav a.donate-btn {
+    background: var(--accent);
+    color: white;
+  }
+  .header-top-nav a.donate-btn:hover {
+    background: #e53935;
+  }
 }
 
-/* =========================
-   RESPONSIVE ΣΥΜΠΕΡΙΦΟΡΑ
-   ========================= */
-
-/* 1) Μικρά κινητά: να φαίνεται ΜΟΝΟ το burger.
-      Το μενού είναι κρυφό & ανοίγει μόνο όταν παίρνει .open */
-@media (max-width: 480px){
-  .main-nav{ display:none; }
-  .main-nav.open{ display:flex; } /* το ανοίγει το JS */
-  .site-header{ padding-top:100px; }
-  section{ margin:20px 12px; }
-  .project-card{flex:1 1 100%}
+/* MAIN */
+main {
+  min-height: calc(10vh - 32px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg);
 }
 
-/* 2) Από tablets και πάνω: το μενού πάντα ορατό */
-@media (min-width: 481px){
-  .main-nav{ display:flex; }
+section {
+  width: 100%;
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 20px;
+  background: var(--card);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  text-align: left;
+}
+section h1, section h2, section p {
+  margin-bottom: 1.2em;
+  line-height: 1.6;
+}
+
+/* PORTFOLIO SECTION */
+.portfolio-section {
+  margin-top: 60px;
+  width: 100%;
+  background: var(--card);
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.portfolio-section h2 {
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  text-align: center;
+}
+.project-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.project-btn {
+  flex: 1 1 300px;
+  background-color: var(--green-dark);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.project-btn:hover {
+  background-color: var(--green);
+}
+
+/* DONATE OPTIONS */
+.donate-options {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.paypal {
+  background: #003087;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.bitcoin {
+  background: #f7931a;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/* BURGER MENU BUTTON */
+.menu-toggle {
+  display: block;
+  position: fixed;
+  left: 12px;
+  top: 12px;
+  z-index: 9999;
+  background: var(--green);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* BURGER NAV MENU */
+.main-nav {
+  position: fixed;
+  left: 12px;
+  top: 60px;
+  z-index: 9998;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  background: rgba(255,255,255,0.95);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+.main-nav.open {
+  display: flex;
+}
+.main-nav a {
+  text-decoration: none;
+  color: var(--green-dark);
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+.main-nav a.donate-btn {
+  background: var(--accent);
+  color: white;
+}
+
+/* FORMS */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+input, textarea, button {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+button {
+  background: var(--green);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background: var(--green-dark);
+}
+
+/* FOOTER */
+.site-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #222;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 10px;
+  z-index: 9999;
+  font-size: 0.9rem;
 }
