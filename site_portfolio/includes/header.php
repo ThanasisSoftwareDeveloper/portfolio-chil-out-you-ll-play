@@ -31,8 +31,9 @@
   </nav>
 
   <header class="site-header">
-    <h1>Πώς θα αφήσουν τα παιδιά για λίγο το κινητό, για να διαβάσουν;</h1>
-    <p class="subtitle">Ένα project αφιερωμένο στην ισορροπία ανάμεσα στην οθόνη και το βιβλίο 📚</p>
+    <h1>How can children put down their cell phones for a while to read?</h1>
+    <p class="subtitle">A project dedicated to the balance between screen and book 📚</p>
   </header>
 
   <main>
+
