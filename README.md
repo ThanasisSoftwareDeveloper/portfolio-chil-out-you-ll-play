@@ -82,7 +82,7 @@ In your browser, open:
 
 In your browser, open:
 http://localhost/portfolio/
-now just open:
+, or just open:
 www.thanasis-codes.eu
 
 ✅ You should see your homepage, navigation bar, contact form, login, and donate buttons working.
@@ -117,6 +117,7 @@ Steps:
 👨‍💻 Author
 
 Thanasis Koufos
+
 Web Developer
 
 📧 thanasis.koufos1@gmail.com
