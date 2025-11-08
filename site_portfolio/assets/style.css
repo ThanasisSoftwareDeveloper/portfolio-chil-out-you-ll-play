@@ -47,31 +47,40 @@ html, body {
 }
 @media (min-width: 768px) {
   .header-top-nav {
-    position: absolute;
+    position: fixed;
     top: 12px;
     right: 12px;
     display: flex;
+    align-items: center;
     gap: 12px;
     z-index: 9998;
   }
   .header-top-nav a {
-    text-decoration: none;
-    padding: 8px 14px;
-    background-color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: 8px 16px;
+    background-color: rgba(255, 255, 255, 0.95);
     color: var(--green-dark);
-    font-weight: bold;
+    font-weight: 600;
     border-radius: 6px;
-    transition: background 0.3s, color 0.3s;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
   }
-  .header-top-nav a:hover {
+  .header-top-nav a:hover,
+  .header-top-nav a:focus-visible {
     background-color: var(--hover);
     color: white;
+    transform: translateY(-1px);
   }
   .header-top-nav a.donate-btn {
     background: var(--accent);
     color: white;
   }
-  .header-top-nav a.donate-btn:hover {
+  .header-top-nav a.donate-btn:hover,
+  .header-top-nav a.donate-btn:focus-visible {
     background: #e53935;
   }
 }
@@ -236,10 +245,16 @@ button:hover {
   background: #222;
   color: white;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  gap: 8px;
-  padding: 12px 10px;
+  gap: 28px;
+  padding: 14px 16px;
   z-index: 9999;
   font-size: 0.9rem;
+  text-align: center;
 }
+.site-footer span {
+  display: inline-block;
+}
+
