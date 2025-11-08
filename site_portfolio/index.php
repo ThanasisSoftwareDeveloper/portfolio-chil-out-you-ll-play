@@ -1,7 +1,8 @@
 <?php
 require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/counter.php';
-$count = increment_counter('index');
+$visitor_count = increment_site_counter();
+increment_counter('index');
 include __DIR__ . '/includes/header.php';
 ?>
 <section>
@@ -18,21 +19,11 @@ include __DIR__ . '/includes/header.php';
     <li>Parents set the example — they put their phones away too.</li>
   </ul>
 
-  <section class="portfolio-section">
-  <h2>Portfolio</h2>
-  <div class="project-buttons">
-    <a href="#" class="project-btn">
-      <strong>Educational Web Concept</strong><br>
-      A page encouraging reading through storytelling.
-    </a>
-    <a href="#" class="project-btn">
-      <strong>AI Assistant for Students</strong><br>
-      A chatbot to help students organize their study time.
-    </a>
+  <h3>Portfolio</h3>
+  <div class="projects">
+    <div class="project-card"><h4>My Sumary</h4><p>Α brief introduction.</p></div>
+    <div class="project-card"><h4>AI Assistant for Students</h4><p>A mobile app to help students organize their study time.</p></div>
   </div>
-</section>
-
-  <p style="margin-top:20px;color:#667;">Page views: <?php echo htmlspecialchars($count); ?></p>
 </section>
 
 <?php include __DIR__ . '/includes/footer.php'; ?>
