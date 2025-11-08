@@ -18,11 +18,19 @@ include __DIR__ . '/includes/header.php';
     <li>Parents set the example — they put their phones away too.</li>
   </ul>
 
-  <h3>Portfolio</h3>
-  <div class="projects">
-    <div class="project-card"><h4>Educational Web Concept</h4><p>A page encouraging reading through storytelling.</p></div>
-    <div class="project-card"><h4>AI Assistant for Students</h4><p>A chatbot to help students organize their study time.</p></div>
+  <section class="portfolio-section">
+  <h2>Portfolio</h2>
+  <div class="project-buttons">
+    <a href="#" class="project-btn">
+      <strong>Educational Web Concept</strong><br>
+      A page encouraging reading through storytelling.
+    </a>
+    <a href="#" class="project-btn">
+      <strong>AI Assistant for Students</strong><br>
+      A chatbot to help students organize their study time.
+    </a>
   </div>
+</section>
 
   <p style="margin-top:20px;color:#667;">Page views: <?php echo htmlspecialchars($count); ?></p>
 </section>
