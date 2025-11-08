@@ -12,31 +12,28 @@
   <script defer src="/assets/script.js"></script>
 </head>
 <body>
-
   <!-- Burger button - visible only on small screens -->
   <button id="menu-toggle" class="menu-toggle" aria-label="Menu">☰</button>
 
-  <!-- Navigation menu for both mobile and desktop -->
-  <nav id="nav-menu" class="main-nav">
+  <!-- Quick links bar for tablet and larger screens -->
+  <nav class="header-top-nav" aria-label="Γρήγορο μενού">
     <a href="/index.php">Home</a>
     <a href="/contact.php">Contact</a>
     <a href="/login.php">Login / Sign-Up</a>
     <a href="/donate.php" class="donate-btn">💖 Donate</a>
   </nav>
 
-  <!-- Top right navigation - shown only on large screens -->
-  <div class="top-nav">
+  <nav id="nav-menu" class="main-nav" aria-label="Κεντρικό μενού">
     <a href="/index.php">Home</a>
     <a href="/contact.php">Contact</a>
     <a href="/login.php">Login / Sign-Up</a>
     <a href="/donate.php" class="donate-btn">💖 Donate</a>
-  </div>
+  </nav>
 
   <header class="site-header">
-    <h1>How can children put down their phones for a while and read?</h1>
-    <p class="subtitle">A project dedicated to striking a balance between screens and books 📚</p>
+    <h1>Πώς θα αφήσουν τα παιδιά για λίγο το κινητό, για να διαβάσουν;</h1>
+    <p class="subtitle">Ένα project αφιερωμένο στην ισορροπία ανάμεσα στην οθόνη και το βιβλίο 📚</p>
   </header>
-  
 
-  <main></main>
+  <main>
 
