@@ -1,10 +1,11 @@
 # 📘 Portfolio Website – “How to Help Teenagers Take a Break from Their Phones, in order to read”
 
 This is a lightweight, and elegant personal portfolio website built with **HTML, CSS, JavaScript, PHP, and MySQL**, from scratch.
+
 You can just open:
 www.thanasis-codes.eu
-It also serves as an educational demo project for running a dynamic website locally and deploying a static version to GitHub Pages.
 
+It also serves as an educational demo project for running a dynamic website locally and deploying a static version to GitHub Pages.
 
 
 ## 🧩 File & Folder Structure
