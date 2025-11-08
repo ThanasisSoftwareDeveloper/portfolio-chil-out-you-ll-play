@@ -1,17 +1,8 @@
 # 📘 Portfolio Website – “How to Help Kids Take a Break from Their Phones, in order to read”
 
-This is a lightweight, and elegant personal portfolio website built with **HTML, CSS, JavaScript, PHP, and MySQL**.  
+This is a lightweight, and elegant personal portfolio website built with **HTML, CSS, JavaScript, PHP, and MySQL**, from scratch.  
 It also serves as an educational demo project for running a dynamic website locally and deploying a static version to GitHub Pages.
 
-
-## ⚙️ Requirements (for local PHP/MySQL version)
-
-To run the full version on your computer, install:
-
-- **[XAMPP](https://www.apachefriends.org/)** or **[WAMP](https://www.wampserver.com/en/)**  
-  (includes Apache + PHP + MySQL)
-- A code editor such as **VS Code** or **Sublime Text**
-- Optional: **phpMyAdmin** (included with XAMPP/WAMP)
 
 
 ## 🧩 File & Folder Structure
@@ -88,6 +79,8 @@ In your browser, open:
 
 In your browser, open:
 http://localhost/portfolio/
+now just open:
+www.thanasis-codes.eu
 
 ✅ You should see your homepage, navigation bar, contact form, login, and donate buttons working.
 
