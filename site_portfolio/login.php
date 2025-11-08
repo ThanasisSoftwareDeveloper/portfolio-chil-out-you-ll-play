@@ -1,7 +1,8 @@
 <?php
 require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/counter.php';
-$count = increment_counter('login');
+$visitor_count = increment_site_counter();
+$page_views = increment_counter('login');
 include __DIR__ . '/includes/header.php';
 ?>
 <section>
@@ -25,7 +26,7 @@ include __DIR__ . '/includes/header.php';
     </div>
   </div>
 
-  <p style="margin-top:20px;color:#666">Page views: <?php echo htmlspecialchars($count); ?></p>
+  <p style="margin-top:20px;color:#665">Page views: <?php echo htmlspecialchars((string) $page_views); ?></p>
 </section>
 
 <?php include __DIR__ . '/includes/footer.php'; ?>
