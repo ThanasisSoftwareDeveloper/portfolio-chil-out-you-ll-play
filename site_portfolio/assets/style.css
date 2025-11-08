@@ -113,7 +113,7 @@ section h1, section h2, section p {
 
 /* PORTFOLIO SECTION */
 .portfolio-section {
-  margin-top: 60px;
+  margin-top: 25px;
   width: 100%;
   background: var(--card);
   padding: 40px 0;
@@ -259,6 +259,7 @@ button:hover {
 .site-footer span {
   display: inline-block;
 }
+
 
 
 
