@@ -1,7 +1,8 @@
 <?php
 require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/counter.php';
-$count = increment_counter('donate');
+$visitor_count = increment_site_counter();
+$page_views = increment_counter('donate');
 include __DIR__ . '/includes/header.php';
 ?>
 <section>
@@ -23,7 +24,7 @@ include __DIR__ . '/includes/header.php';
     <button id="copy-btc" style="margin-top:8px;padding:8px 12px;border-radius:6px;">Copy address</button>
   </div>
 
-  <p style="margin-top:20px;color:#666">Page views: <?php echo htmlspecialchars($count); ?></p>
+  <p style="margin-top:20px;color:#666">Page views: <?php echo htmlspecialchars((string) $page_views); ?></p>
 </section>
 
 <?php include __DIR__ . '/includes/footer.php'; ?>
