@@ -19,12 +19,19 @@ include __DIR__ . '/includes/header.php';
     <li>Parents set the example — they put their phones away too.</li>
   </ul>
 
-  <h3>Portfolio</h3>
-  <div class="projects">
-    <div class="project-card"><h4>Explore My Work</h4><p>Α brief introduction.</p></div>
-    <div class="project-card"><h4>Teenagers & Mobiles</h4><p>A discussion about reading and screens.</p></div>
+  <div class="portfolio-section">
+    <h2>Portfolio</h2>
+    <div class="project-buttons">
+      <a href="#" class="project-btn">
+        <strong>Explore My Work</strong><br>
+        Α brief introduction.
+      </a>
+      <a href="#" class="project-btn">
+        <strong>Teenagers & Mobiles</strong><br>
+      A discussion about reading and screens.
+      </a>
+    </div>
   </div>
 </section>
 
 <?php include __DIR__ . '/includes/footer.php'; ?>
-
