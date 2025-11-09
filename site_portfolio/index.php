@@ -24,7 +24,7 @@ include __DIR__ . '/includes/header.php';
     <div class="project-buttons">
       <a href="https://www.thanasis-codes.eu/blog/" class="project-btn" target="_blank" rel="noopener">
         <strong>Explore My Work</strong><br>
-        Visit my blog for more projects and insights.
+        Visit my wp blog for more projects and insights.
       </a>
       <a href="#" class="project-btn">
         <strong>Teenagers & Mobiles</strong><br>
@@ -35,5 +35,6 @@ include __DIR__ . '/includes/header.php';
 </section>
 
 <?php include __DIR__ . '/includes/footer.php'; ?>
+
 
 
