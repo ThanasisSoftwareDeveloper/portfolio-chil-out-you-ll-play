@@ -21,9 +21,10 @@ include __DIR__ . '/includes/header.php';
 
   <h3>Portfolio</h3>
   <div class="projects">
-    <div class="project-card"><h4>My Sumary</h4><p>Α brief introduction.</p></div>
-    <div class="project-card"><h4>AI Assistant for Students</h4><p>A mobile app to help students organize their study time.</p></div>
+    <div class="project-card"><h4>Explore My Work</h4><p>Α brief introduction.</p></div>
+    <div class="project-card"><h4>Teenagers & Mobiles</h4><p>A discussion about reading and screens.</p></div>
   </div>
 </section>
 
 <?php include __DIR__ . '/includes/footer.php'; ?>
+
