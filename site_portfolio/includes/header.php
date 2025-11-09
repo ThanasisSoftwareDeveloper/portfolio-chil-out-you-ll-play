@@ -31,9 +31,10 @@
   </nav>
 
   <header class="site-header">
-    <h1>How can children put down their cell phones for a while to read?</h1>
+    <h1>Reading vs. Screens: Helping Teens Find Balance</h1>
     <p class="subtitle">A project dedicated to the balance between screen and book 📚</p>
   </header>
 
   <main>
+
 
